@@ -1,8 +1,6 @@
 import asyncio
 import time
 from typing import Callable
-
-from _testcapi import awaitType
 from langchain.agents import create_agent
 from langchain.agents.middleware import ModelRequest, ModelResponse, wrap_model_call
 from langchain.chat_models import init_chat_model
@@ -24,28 +22,6 @@ def who_am_i()->dict:
 
 ## 两个线程池，不同的线程池是不同的model，预装5个agent，一个任务，执行失败了，换一个池
 
-"""
-月之暗面
-
-sk-ZOVuEx688gjWBI7CTc8totntZnnCCM7B9ED0IQFPjEhDQlax
-base_url="https://api.moonshot.cn/v1"
-kimi-k2.5
-"""
-"""
-chatanywhere
-
-gpt-5.4-mini,
-base_url="https://api.chatanywhere.tech/v1",
-api_key="sk-E1LDx9RPXp4bfejIy80YGKhVI0RjOeAgpg0KgzWAGGWx28sx"
-"""
-"""
-deepseek
-sk-6e3e5a4d8535442aa83fe1983affe742
-https://api.deepseek.com
-deepseek-v4-flash
-
-
-"""
 os.environ["model"]="deepseek-v4-flash"
 os.environ["base_url"]="https://api.deepseek.com"
 os.environ["api_key"]="sk-6e3e5a4d8535442aa83fe1983affe742"
